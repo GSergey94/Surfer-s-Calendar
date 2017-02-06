@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ef-2r-5uc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DK Shaken Not Stirred.otf">
+            <string>DKShakenNotStirred</string>
+        </array>
+        <array key="MixGiants.ttf">
+            <string>MixGiants</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!-- Surfer's Calendar  -->
+        <scene sceneID="XFV-iQ-5lS">
+            <objects>
+                <collectionViewController id="he5-1t-3ah" customClass="CollectionViewController" customModule="Surfer_s_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="F8r-u5-wCk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96612114884375966" green="0.97994224086955395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="YHH-UV-PeZ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="101"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="cell" id="9T8-T7-nlP" customClass="CustomCollectionViewCell" customModule="Surfer_s_Calendar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="101" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cell" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT5-gt-gpF">
+                                            <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                            <color key="textColor" red="0.29019607843137257" green="0.42352941176470588" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-S1-2ST" userLabel="DayButton">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="3O5-RG-L2f"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gMj-Oj-5kO"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="hoY-Th-TRP"/>
+                                                <constraint firstAttribute="height" constant="50" id="oJd-rP-PhF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="DKShakenNotStirred" family="DK Shaken Not Stirred" pointSize="30"/>
+                                            <state key="normal" title="1">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="YDn-hJ-PJC" kind="show" identifier="createEvent" id="wzj-2A-JJk"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vD-ZB-8Gb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="12j-Li-f8a"/>
+                                                <constraint firstAttribute="width" constant="50" id="FJn-0L-gSA"/>
+                                            </constraints>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" image="rating"/>
+                                            <connections>
+                                                <segue destination="Hu3-Cf-R7b" kind="show" identifier="showEvent" id="5e6-Zi-2qk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0vD-ZB-8Gb" firstAttribute="top" secondItem="9T8-T7-nlP" secondAttribute="topMargin" constant="-8" id="7X0-O2-wRR"/>
+                                    <constraint firstItem="r0U-S1-2ST" firstAttribute="leading" secondItem="9T8-T7-nlP" secondAttribute="leadingMargin" constant="-8" id="AVn-Nl-SeF"/>
+                                    <constraint firstItem="LT5-gt-gpF" firstAttribute="leading" secondItem="9T8-T7-nlP" secondAttribute="leadingMargin" constant="-8" id="EeR-fD-xcH"/>
+                                    <constraint firstItem="LT5-gt-gpF" firstAttribute="top" secondItem="9T8-T7-nlP" secondAttribute="topMargin" constant="-8" id="Iqm-6r-5qM"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="r0U-S1-2ST" secondAttribute="trailing" constant="-8" id="KpB-Pd-bLY"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0vD-ZB-8Gb" secondAttribute="trailing" constant="-8" id="PZ1-OH-sgl"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="LT5-gt-gpF" secondAttribute="trailing" constant="-8" id="SuY-JJ-Tva"/>
+                                    <constraint firstItem="0vD-ZB-8Gb" firstAttribute="leading" secondItem="9T8-T7-nlP" secondAttribute="leadingMargin" constant="-8" id="Z06-s9-lkU"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="0vD-ZB-8Gb" secondAttribute="bottom" constant="-8" id="aal-i5-HIW"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0vD-ZB-8Gb" secondAttribute="trailing" constant="-8" id="h96-10-5XC"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="r0U-S1-2ST" secondAttribute="bottom" constant="-8" id="ijd-7H-lsP"/>
+                                    <constraint firstItem="r0U-S1-2ST" firstAttribute="top" secondItem="9T8-T7-nlP" secondAttribute="topMargin" constant="-8" id="kYb-m6-GNN"/>
+                                    <constraint firstItem="0vD-ZB-8Gb" firstAttribute="top" secondItem="9T8-T7-nlP" secondAttribute="topMargin" constant="-8" id="lhK-Nl-KZw"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="0vD-ZB-8Gb" secondAttribute="bottom" constant="-8" id="ml6-4p-ieO"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="LT5-gt-gpF" secondAttribute="bottom" constant="-8" id="oyZ-gB-5KK"/>
+                                    <constraint firstItem="0vD-ZB-8Gb" firstAttribute="leading" secondItem="9T8-T7-nlP" secondAttribute="leadingMargin" constant="-8" id="pBa-3L-Te5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="LT5-gt-gpF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="conditionButton" destination="0vD-ZB-8Gb" id="VK2-aO-5EK"/>
+                                    <outlet property="dayButton" destination="r0U-S1-2ST" id="4cc-sP-qMn"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" restorationIdentifier="ReusableCell" reuseIdentifier="ReusableCell" id="1bG-pz-dHK" customClass="CollectionReusableView" customModule="Surfer_s_Calendar" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-4Y-TD6">
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAm-zU-D7i">
+                                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                            <state key="normal" title="&lt;">
+                                                <color key="titleColor" red="0.98996180295944214" green="0.99545049667358398" blue="0.98984181880950928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="previousMouth:" destination="he5-1t-3ah" eventType="touchUpInside" id="T6l-Uv-r7P"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ZJI-6b-u2d">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgg-ur-gXa">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-qk-3Ho">
+                                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                            <state key="normal" title="&gt;">
+                                                <color key="titleColor" red="0.98996180295944214" green="0.99545049667358398" blue="0.98984181880950928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="nextMouth:" destination="he5-1t-3ah" eventType="touchUpInside" id="NU8-Lv-i7a"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Soi-qk-3Ho" firstAttribute="height" secondItem="uAm-zU-D7i" secondAttribute="height" id="3Kb-eC-bsW"/>
+                                        <constraint firstItem="Soi-qk-3Ho" firstAttribute="width" secondItem="uAm-zU-D7i" secondAttribute="width" id="La2-0X-UT3"/>
+                                        <constraint firstItem="ZJI-6b-u2d" firstAttribute="width" secondItem="uAm-zU-D7i" secondAttribute="width" id="Rnk-Cr-Jnb"/>
+                                        <constraint firstItem="Rgg-ur-gXa" firstAttribute="width" secondItem="uAm-zU-D7i" secondAttribute="width" id="UcS-Ea-Up0"/>
+                                        <constraint firstAttribute="height" constant="40" id="V8e-OT-zrr"/>
+                                        <constraint firstItem="Rgg-ur-gXa" firstAttribute="height" secondItem="uAm-zU-D7i" secondAttribute="height" id="cyb-Kp-ZhK"/>
+                                        <constraint firstItem="ZJI-6b-u2d" firstAttribute="height" secondItem="uAm-zU-D7i" secondAttribute="height" id="oX2-hj-7bV"/>
+                                    </constraints>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9F-1w-Tqb">
+                                    <frame key="frameInset" minY="83" width="600" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-X7-N51">
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm5-hr-Ir0">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnw-Rl-x0J">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIb-Yy-n0i">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N2-IP-fVI">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vu-Ls-lKk">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihU-Lw-dod">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ5-Vx-cjL">
+                                            <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1N2-IP-fVI" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" constant="1" id="0fs-BY-FDD"/>
+                                        <constraint firstItem="Jnw-Rl-x0J" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" id="7mc-R3-F1u"/>
+                                        <constraint firstAttribute="width" constant="600" id="AXh-jO-Fg4"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Bwn-9a-DGe"/>
+                                        <constraint firstItem="jIb-Yy-n0i" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" id="JSx-Sl-1Kh"/>
+                                        <constraint firstItem="ihU-Lw-dod" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" id="qKC-lf-jq0"/>
+                                        <constraint firstItem="qJ5-Vx-cjL" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" id="rSF-1O-JuQ"/>
+                                        <constraint firstAttribute="height" constant="35" id="sTl-jb-axg"/>
+                                        <constraint firstItem="2vu-Ls-lKk" firstAttribute="width" secondItem="cm5-hr-Ir0" secondAttribute="width" id="ybK-yV-FdG"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="d9F-1w-Tqb" secondAttribute="trailing" constant="-8" id="3df-o1-l8C"/>
+                                <constraint firstItem="BFt-X7-N51" firstAttribute="top" secondItem="iAd-4Y-TD6" secondAttribute="bottom" constant="8" id="Afx-QF-IYM"/>
+                                <constraint firstItem="d9F-1w-Tqb" firstAttribute="top" secondItem="BFt-X7-N51" secondAttribute="bottom" constant="-8" id="BOX-K8-MJB"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="iAd-4Y-TD6" secondAttribute="trailing" id="FPW-P9-n0q"/>
+                                <constraint firstItem="BFt-X7-N51" firstAttribute="leading" secondItem="1bG-pz-dHK" secondAttribute="leadingMargin" constant="-8" id="Uwc-a4-qbj"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="d9F-1w-Tqb" secondAttribute="bottom" constant="-8" id="VQl-Jl-7I8"/>
+                                <constraint firstItem="d9F-1w-Tqb" firstAttribute="leading" secondItem="1bG-pz-dHK" secondAttribute="leadingMargin" constant="-8" id="h3o-GJ-Om8"/>
+                                <constraint firstItem="iAd-4Y-TD6" firstAttribute="top" secondItem="1bG-pz-dHK" secondAttribute="topMargin" id="hgI-rk-WF1"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="BFt-X7-N51" secondAttribute="trailing" constant="-8" id="joq-2O-naq"/>
+                                <constraint firstItem="iAd-4Y-TD6" firstAttribute="leading" secondItem="1bG-pz-dHK" secondAttribute="leadingMargin" id="s1S-4M-M5b"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="BFt-X7-N51" secondAttribute="bottom" constant="2" id="zEf-Nq-Aqs"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="button1" destination="uAm-zU-D7i" id="L85-8R-7cq"/>
+                                <outlet property="button2" destination="Soi-qk-3Ho" id="GEn-ee-UxB"/>
+                                <outlet property="mouthLabel" destination="ZJI-6b-u2d" id="Du0-Xw-XLK"/>
+                                <outlet property="yearLabel" destination="Rgg-ur-gXa" id="LRv-1E-Cib"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="he5-1t-3ah" id="xS4-TV-cVU"/>
+                            <outlet property="delegate" destination="he5-1t-3ah" id="uto-nX-zRe"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title=" Surfer's Calendar  " id="ILZ-E1-a58"/>
+                    <connections>
+                        <outlet property="collectionView" destination="F8r-u5-wCk" id="B9m-GB-bbj"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6o-dq-4mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="1002"/>
+        </scene>
+        <!--Content Day View Controller-->
+        <scene sceneID="Lqk-J2-B0u">
+            <objects>
+                <viewController storyboardIdentifier="IDtoShow" id="YDn-hJ-PJC" customClass="ContentDayViewController" customModule="Surfer_s_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Sn-E9-wS1"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoz-AU-Bd3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ged-Ki-iYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaI-AT-JcQ">
+                                <frame key="frameInset" width="607" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fon" translatesAutoresizingMaskIntoConstraints="NO" id="GO8-vi-vZL"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZzV-Y4-GSy">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxn-4f-2qX">
+                                                <frame key="frameInset" minX="20" minY="5" width="335" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttV-CU-wvn">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="34"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mouth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGr-oK-SbP">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="34"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-qH-amY">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="34"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="KGr-oK-SbP" firstAttribute="width" secondItem="ttV-CU-wvn" secondAttribute="width" id="cyu-l8-vkv"/>
+                                                    <constraint firstItem="vvc-qH-amY" firstAttribute="width" secondItem="ttV-CU-wvn" secondAttribute="width" id="rj4-rg-bTC"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="DHM-ko-zeZ">
+                                                <frame key="frameInset" minX="100" minY="284" width="491" height="273"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="273" id="Tf0-Q1-NLd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7q-Kt-T6A">
+                                                <frame key="frameInset" minX="96" minY="282" width="496" height="275"/>
+                                                <color key="tintColor" red="0.084315352141857147" green="0.51256650686264038" blue="0.76379126310348511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="getPhotoButton:" destination="YDn-hJ-PJC" eventType="touchUpInside" id="SAj-Hi-qT2"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7q-m3-myw">
+                                                <frame key="frameInset" minY="51" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start time:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDs-Li-5u7">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="startCell" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-yQ-YHq">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-ay-5NT">
+                                                <frame key="frameInset" minY="92" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End time:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLU-T5-m2R">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="endCell" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RN-7g-kMW">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOP-fQ-wZl">
+                                                <frame key="frameInset" minY="133" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surf point name:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONH-9x-vao">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZP-4r-PqE">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PR-JV-HyI" userLabel="Stack View1">
+                                                <frame key="frameInset" minY="174" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wave size:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-pg-DTx">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOB-hT-872">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLY-tO-v4O" userLabel="Stack View2">
+                                                <frame key="frameInset" minY="251" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBd-RD-LuV">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a text" textAlignment="natural" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-x6-GCn">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRH-fP-Do7">
+                                                <frame key="frameInset" width="39" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Close"/>
+                                                <connections>
+                                                    <segue destination="ec3-IK-VBT" kind="unwind" identifier="saveTraining" unwindAction="close:" id="kcj-Zf-5UK"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFn-Ge-c4V">
+                                                <frame key="frameInset" minY="567" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et5-Sy-KUt">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a text" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="9DF-Sd-6qm">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Photo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKy-KZ-Lxq">
+                                                <frame key="frameInset" minY="295" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="lkQ-E0-i1g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-jx-Ef0">
+                                                <frame key="frameInset" minY="216" width="375" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avi-mb-6zV">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="VXp-uC-FBV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-eK-IlO">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="JxN-iA-EmA"/>
+                                                            <constraint firstAttribute="width" constant="30" id="Swr-Pa-cRI"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" image="close"/>
+                                                    </button>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwK-ov-TG2">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ulD-eK-IlO" firstAttribute="top" secondItem="W3K-jx-Ef0" secondAttribute="top" id="rTA-BA-UE1"/>
+                                                    <constraint firstItem="ulD-eK-IlO" firstAttribute="leading" secondItem="avi-mb-6zV" secondAttribute="trailing" id="ser-1E-f4f"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ulD-eK-IlO" secondAttribute="bottom" id="vqh-Xs-FkU"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="on1-qy-TWJ">
+                                                <frame key="frameInset" minX="15" minY="604" width="570" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="37"/>
+                                                <state key="normal" title="Save Training ">
+                                                    <color key="titleColor" red="0.9661211488" green="0.97994224090000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveTraining:" destination="YDn-hJ-PJC" eventType="touchUpInside" id="L7K-i9-J3o"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zOP-fQ-wZl" secondAttribute="trailing" id="0aA-jU-49t"/>
+                                            <constraint firstItem="DHM-ko-zeZ" firstAttribute="leading" secondItem="pKy-KZ-Lxq" secondAttribute="trailing" id="1ZD-z6-Yr0"/>
+                                            <constraint firstItem="pKy-KZ-Lxq" firstAttribute="top" secondItem="eLY-tO-v4O" secondAttribute="bottom" constant="8" id="2rJ-mz-rj4"/>
+                                            <constraint firstItem="1PR-JV-HyI" firstAttribute="top" secondItem="zOP-fQ-wZl" secondAttribute="bottom" constant="5" id="2sd-oC-SLU"/>
+                                            <constraint firstItem="hFn-Ge-c4V" firstAttribute="top" secondItem="w7q-Kt-T6A" secondAttribute="bottom" constant="10" id="3ls-db-Kiu"/>
+                                            <constraint firstAttribute="trailing" secondItem="eLY-tO-v4O" secondAttribute="trailing" id="54C-OB-qGP"/>
+                                            <constraint firstItem="hFn-Ge-c4V" firstAttribute="top" secondItem="DHM-ko-zeZ" secondAttribute="bottom" constant="10" id="7aX-ld-8j1"/>
+                                            <constraint firstItem="Jed-ay-5NT" firstAttribute="top" secondItem="i7q-m3-myw" secondAttribute="bottom" constant="5" id="8Fg-jm-YcF"/>
+                                            <constraint firstAttribute="trailing" secondItem="i7q-m3-myw" secondAttribute="trailing" id="Bec-Hq-bWO"/>
+                                            <constraint firstItem="zOP-fQ-wZl" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="FRX-kU-AA3"/>
+                                            <constraint firstItem="on1-qy-TWJ" firstAttribute="top" secondItem="hFn-Ge-c4V" secondAttribute="bottom" constant="1" id="H7U-5x-1Xb"/>
+                                            <constraint firstItem="DHM-ko-zeZ" firstAttribute="top" secondItem="eLY-tO-v4O" secondAttribute="bottom" constant="-3" id="IXw-pr-aIt"/>
+                                            <constraint firstItem="eLY-tO-v4O" firstAttribute="top" secondItem="W3K-jx-Ef0" secondAttribute="bottom" constant="5" id="Iqs-fE-RKz"/>
+                                            <constraint firstAttribute="trailing" secondItem="W3K-jx-Ef0" secondAttribute="trailing" id="MFL-cy-Pg9"/>
+                                            <constraint firstAttribute="trailing" secondItem="1PR-JV-HyI" secondAttribute="trailing" id="Mal-6W-YY3"/>
+                                            <constraint firstItem="Jed-ay-5NT" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="Nff-aa-Psj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cxn-4f-2qX" secondAttribute="trailing" constant="20" id="OIc-N9-rag"/>
+                                            <constraint firstItem="hFn-Ge-c4V" firstAttribute="top" secondItem="pKy-KZ-Lxq" secondAttribute="bottom" constant="232" id="RtI-T5-gWs"/>
+                                            <constraint firstAttribute="trailing" secondItem="DHM-ko-zeZ" secondAttribute="trailing" constant="9" id="UJ3-bI-yKq"/>
+                                            <constraint firstItem="w7q-Kt-T6A" firstAttribute="leading" secondItem="pKy-KZ-Lxq" secondAttribute="trailing" constant="-4" id="VDE-qM-ZPy"/>
+                                            <constraint firstItem="on1-qy-TWJ" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" constant="15" id="WYV-4n-Dje"/>
+                                            <constraint firstItem="W3K-jx-Ef0" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="XLa-9X-hEN"/>
+                                            <constraint firstItem="i7q-m3-myw" firstAttribute="top" secondItem="Cxn-4f-2qX" secondAttribute="bottom" constant="10" id="abj-vM-FEQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="DHM-ko-zeZ" secondAttribute="trailing" constant="9" id="dNX-Em-ATZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="w7q-Kt-T6A" secondAttribute="trailing" constant="8" id="fIg-U8-KC2"/>
+                                            <constraint firstItem="i7q-m3-myw" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="fPF-fA-NHe"/>
+                                            <constraint firstItem="zOP-fQ-wZl" firstAttribute="top" secondItem="Jed-ay-5NT" secondAttribute="bottom" constant="5" id="flb-WU-ci3"/>
+                                            <constraint firstItem="eLY-tO-v4O" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="i0c-1N-8CY"/>
+                                            <constraint firstItem="W3K-jx-Ef0" firstAttribute="top" secondItem="1PR-JV-HyI" secondAttribute="bottom" constant="6" id="il9-RG-yzZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jed-ay-5NT" secondAttribute="trailing" id="nzi-8n-sz6"/>
+                                            <constraint firstItem="Cxn-4f-2qX" firstAttribute="top" secondItem="ZzV-Y4-GSy" secondAttribute="top" constant="5" id="tJE-Dt-faC"/>
+                                            <constraint firstItem="hFn-Ge-c4V" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="uAv-dG-e3T"/>
+                                            <constraint firstItem="1PR-JV-HyI" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="ulg-XR-ieD"/>
+                                            <constraint firstItem="w7q-Kt-T6A" firstAttribute="top" secondItem="eLY-tO-v4O" secondAttribute="bottom" constant="-5" id="w9O-OV-Cj0"/>
+                                            <constraint firstAttribute="trailing" secondItem="hFn-Ge-c4V" secondAttribute="trailing" id="wXC-SF-AjD"/>
+                                            <constraint firstItem="pKy-KZ-Lxq" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" id="wdH-Uq-z8t"/>
+                                            <constraint firstItem="Cxn-4f-2qX" firstAttribute="leading" secondItem="ZzV-Y4-GSy" secondAttribute="leading" constant="20" id="wzr-cl-kfC"/>
+                                            <constraint firstAttribute="trailing" secondItem="on1-qy-TWJ" secondAttribute="trailing" constant="15" id="xle-c3-ag7"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ey-y5-E6R">
+                                        <rect key="frame" x="183" y="236" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZzV-Y4-GSy" firstAttribute="width" secondItem="IaI-AT-JcQ" secondAttribute="width" constant="-7" id="37R-N3-HQB"/>
+                                    <constraint firstItem="ZzV-Y4-GSy" firstAttribute="centerY" secondItem="IaI-AT-JcQ" secondAttribute="centerY" id="AGx-hJ-Bz7"/>
+                                    <constraint firstItem="GO8-vi-vZL" firstAttribute="leading" secondItem="IaI-AT-JcQ" secondAttribute="leading" id="HLo-PB-aB6"/>
+                                    <constraint firstItem="GO8-vi-vZL" firstAttribute="top" secondItem="IaI-AT-JcQ" secondAttribute="top" id="R65-Th-oBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="GO8-vi-vZL" secondAttribute="trailing" constant="8" id="gEH-FW-ogl"/>
+                                    <constraint firstItem="ZzV-Y4-GSy" firstAttribute="centerX" secondItem="IaI-AT-JcQ" secondAttribute="centerX" constant="-3.5" id="jMJ-1Z-j0u"/>
+                                    <constraint firstItem="ZzV-Y4-GSy" firstAttribute="height" secondItem="IaI-AT-JcQ" secondAttribute="height" id="pdx-BF-ej8"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="GO8-vi-vZL"/>
+                                        <exclude reference="5ey-y5-E6R"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IaI-AT-JcQ" firstAttribute="centerX" secondItem="Ged-Ki-iYW" secondAttribute="centerX" constant="3.5" id="497-bR-Gic"/>
+                            <constraint firstItem="IaI-AT-JcQ" firstAttribute="width" secondItem="Ged-Ki-iYW" secondAttribute="width" constant="7" id="GEp-io-klQ"/>
+                            <constraint firstItem="IaI-AT-JcQ" firstAttribute="height" secondItem="Ged-Ki-iYW" secondAttribute="height" constant="300" id="VwN-Ek-4Wq"/>
+                            <constraint firstItem="IaI-AT-JcQ" firstAttribute="centerY" secondItem="Ged-Ki-iYW" secondAttribute="centerY" constant="150" id="sFI-Cx-hGG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="additionalText" destination="9DF-Sd-6qm" id="DBF-rL-foD"/>
+                        <outlet property="buttonImage" destination="w7q-Kt-T6A" id="bbJ-sW-KDu"/>
+                        <outlet property="commentText" destination="pbe-x6-GCn" id="wzM-e2-Gm6"/>
+                        <outlet property="conditionPickerText" destination="RwK-ov-TG2" id="h6z-Ob-Vsc"/>
+                        <outlet property="dateLabel" destination="ttV-CU-wvn" id="xcX-1a-g2T"/>
+                        <outlet property="endTimeTrainingPicker" destination="3RN-7g-kMW" id="tWc-gE-F2g"/>
+                        <outlet property="imageCondition" destination="ulD-eK-IlO" id="ByG-Tz-fyc"/>
+                        <outlet property="locationSurf" destination="cZP-4r-PqE" id="FXz-Km-OYA"/>
+                        <outlet property="mouthLabel" destination="KGr-oK-SbP" id="dh8-L9-0Xg"/>
+                        <outlet property="photo" destination="DHM-ko-zeZ" id="xRu-Nc-aOb"/>
+                        <outlet property="scrollView" destination="IaI-AT-JcQ" id="1wV-2C-o4L"/>
+                        <outlet property="startTimeTrainingPicker" destination="MAx-yQ-YHq" id="1NR-vI-GKc"/>
+                        <outlet property="weaveSizePickerText" destination="sOB-hT-872" id="cwI-Sp-3rc"/>
+                        <outlet property="yearLabel" destination="vvc-qH-amY" id="mO1-bC-MkU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BM-i2-7i9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ec3-IK-VBT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="1002"/>
+        </scene>
+        <!--Show Day View Controller-->
+        <scene sceneID="hqA-CE-0p8">
+            <objects>
+                <viewController id="Hu3-Cf-R7b" customClass="ShowDayViewController" customModule="Surfer_s_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wnw-aU-f8M"/>
+                        <viewControllerLayoutGuide type="bottom" id="uqk-Or-TFL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="huE-dx-g8K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCu-DJ-2th">
+                                <frame key="frameInset" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLA-Kg-FSm">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-QC-hiK">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TlC-Su-28V">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mouth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="T72-80-9dM">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="YNx-ye-txW">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="T72-80-9dM" firstAttribute="width" secondItem="TlC-Su-28V" secondAttribute="width" constant="-1" id="0H5-hv-1bI"/>
+                                                    <constraint firstItem="T72-80-9dM" firstAttribute="height" secondItem="TlC-Su-28V" secondAttribute="height" id="EkK-qD-dH6"/>
+                                                    <constraint firstItem="YNx-ye-txW" firstAttribute="width" secondItem="TlC-Su-28V" secondAttribute="width" id="F4R-SO-7My"/>
+                                                    <constraint firstItem="YNx-ye-txW" firstAttribute="height" secondItem="TlC-Su-28V" secondAttribute="height" id="dKa-GN-uOu"/>
+                                                    <constraint firstItem="T72-80-9dM" firstAttribute="height" secondItem="TlC-Su-28V" secondAttribute="height" id="jN7-kN-1XL"/>
+                                                    <constraint firstItem="YNx-ye-txW" firstAttribute="height" secondItem="TlC-Su-28V" secondAttribute="height" id="rnw-AR-6WF"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-18-IWW">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start time:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Vnn-tZ-NvN">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="PYY-Mk-woQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartTimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rhX-4g-Gbg">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-Ta-rWN" userLabel="Stack View1">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End time:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5YB-U7-n0F">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="3MC-mq-7Ze"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndTimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-dv-ejP">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="u3b-Ze-lYn">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surf point:   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-DN-Khs">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="CFw-sf-frs"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SurfLocationLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OHS-sr-x6j">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="1p9-Gv-fnV">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weave size:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-Lh-hr8">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="HFw-o0-6lJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weaveSizeLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="h3v-AD-UFy">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-7a-w72">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="g9J-Vg-RQ7">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="FeS-Kl-A98"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCI-DA-hA4">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="4mN-P3-fWt"/>
+                                                            <constraint firstAttribute="width" constant="30" id="tkg-gS-bfO"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" image="close"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConditionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-nw-TgF">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="0p1-nw-TgF" firstAttribute="leading" secondItem="LCI-DA-hA4" secondAttribute="trailing" id="HWX-04-Yte"/>
+                                                    <constraint firstItem="LCI-DA-hA4" firstAttribute="leading" secondItem="g9J-Vg-RQ7" secondAttribute="trailing" id="p8f-PL-BIR"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="xUa-fd-pe9">
+                                                <frame key="frameInset" minX="5" minY="286" width="590" height="84"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-c7-1cE" userLabel="Stack View3">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UEG-xg-oQH">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="TBh-3E-n4a"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommentLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFZ-l4-hd2">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MbU-FV-n95" userLabel="Stack View5">
+                                                <frame key="frameInset" minX="5" minY="375" width="365" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uuy-IX-pE2">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="rwO-oY-TaN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AdditionalLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60d-Rp-pt4">
+                                                        <fontDescription key="fontDescription" name="MixGiants" family="MixGiants" pointSize="35"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="u3b-Ze-lYn" firstAttribute="top" secondItem="QM7-Ta-rWN" secondAttribute="bottom" constant="5" id="18L-K5-xvH"/>
+                                            <constraint firstItem="Fmz-c7-1cE" firstAttribute="top" secondItem="4xJ-7a-w72" secondAttribute="bottom" constant="5" id="21n-3W-jK4"/>
+                                            <constraint firstAttribute="trailing" secondItem="MbU-FV-n95" secondAttribute="trailing" constant="5" id="37Q-Dh-2AU"/>
+                                            <constraint firstItem="MbU-FV-n95" firstAttribute="top" secondItem="xUa-fd-pe9" secondAttribute="bottom" constant="5" id="3LN-1n-7b6"/>
+                                            <constraint firstItem="xUa-fd-pe9" firstAttribute="height" secondItem="bLA-Kg-FSm" secondAttribute="height" multiplier="0.5" id="79c-Ca-CTd"/>
+                                            <constraint firstItem="RFY-18-IWW" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="7J1-m3-Bts"/>
+                                            <constraint firstItem="u3b-Ze-lYn" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="CG6-Ut-gBv"/>
+                                            <constraint firstItem="RFY-18-IWW" firstAttribute="top" secondItem="0i3-QC-hiK" secondAttribute="bottom" constant="5" id="Dfs-3d-Ci2"/>
+                                            <constraint firstItem="0i3-QC-hiK" firstAttribute="top" secondItem="bLA-Kg-FSm" secondAttribute="top" constant="5" id="GMK-op-43c"/>
+                                            <constraint firstAttribute="trailing" secondItem="QM7-Ta-rWN" secondAttribute="trailing" constant="5" id="JhI-br-fyM"/>
+                                            <constraint firstAttribute="trailing" secondItem="xUa-fd-pe9" secondAttribute="trailing" constant="5" id="Moq-sh-JZX"/>
+                                            <constraint firstItem="xUa-fd-pe9" firstAttribute="top" secondItem="Fmz-c7-1cE" secondAttribute="bottom" constant="5" id="OCm-Et-i4Q"/>
+                                            <constraint firstItem="Fmz-c7-1cE" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="Rb7-xb-yYe"/>
+                                            <constraint firstAttribute="trailing" secondItem="4xJ-7a-w72" secondAttribute="trailing" constant="5" id="Rld-Hb-SSu"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fmz-c7-1cE" secondAttribute="trailing" constant="5" id="SFs-JG-sx3"/>
+                                            <constraint firstAttribute="trailing" secondItem="u3b-Ze-lYn" secondAttribute="trailing" constant="5" id="TrF-n2-Z4z"/>
+                                            <constraint firstItem="QM7-Ta-rWN" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="YT9-2J-Jas"/>
+                                            <constraint firstItem="MbU-FV-n95" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="Yn4-6J-pNG"/>
+                                            <constraint firstItem="1p9-Gv-fnV" firstAttribute="top" secondItem="u3b-Ze-lYn" secondAttribute="bottom" constant="5" id="dBg-9Q-HOT"/>
+                                            <constraint firstItem="0i3-QC-hiK" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="20" id="dCB-Ga-Pm7"/>
+                                            <constraint firstItem="1p9-Gv-fnV" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="hfe-ki-LdB"/>
+                                            <constraint firstItem="QM7-Ta-rWN" firstAttribute="top" secondItem="RFY-18-IWW" secondAttribute="bottom" constant="5" id="kkt-p7-56o"/>
+                                            <constraint firstItem="xUa-fd-pe9" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="n9v-ls-y9q"/>
+                                            <constraint firstAttribute="trailing" secondItem="RFY-18-IWW" secondAttribute="trailing" constant="5" id="sT7-eJ-t4S"/>
+                                            <constraint firstItem="4xJ-7a-w72" firstAttribute="top" secondItem="1p9-Gv-fnV" secondAttribute="bottom" constant="5" id="t9k-E8-1A9"/>
+                                            <constraint firstItem="4xJ-7a-w72" firstAttribute="leading" secondItem="bLA-Kg-FSm" secondAttribute="leading" constant="5" id="tyj-xY-9YW"/>
+                                            <constraint firstAttribute="trailing" secondItem="0i3-QC-hiK" secondAttribute="trailing" constant="20" id="xLJ-8d-Twc"/>
+                                            <constraint firstAttribute="trailing" secondItem="1p9-Gv-fnV" secondAttribute="trailing" constant="5" id="y65-lk-SKV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bLA-Kg-FSm" firstAttribute="height" secondItem="rCu-DJ-2th" secondAttribute="height" id="f6K-nD-hKd"/>
+                                    <constraint firstItem="bLA-Kg-FSm" firstAttribute="centerY" secondItem="rCu-DJ-2th" secondAttribute="centerY" id="mAQ-V8-vsa"/>
+                                    <constraint firstItem="bLA-Kg-FSm" firstAttribute="centerX" secondItem="rCu-DJ-2th" secondAttribute="centerX" id="sUd-g4-suU"/>
+                                    <constraint firstItem="bLA-Kg-FSm" firstAttribute="width" secondItem="rCu-DJ-2th" secondAttribute="width" id="t4t-sW-PLC"/>
+                                </constraints>
+                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-HD-nKs">
+                                <frame key="frameInset" width="25" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19227514475137716" green="0.43324027052998593" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGp-AD-KlV">
+                                <frame key="frameInset" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="m1j-dJ-Nuz" kind="unwind" identifier="deleteTraining" unwindAction="close:" id="cKg-a0-THa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rCu-DJ-2th" firstAttribute="centerX" secondItem="huE-dx-g8K" secondAttribute="centerX" id="GOp-ef-qUl"/>
+                            <constraint firstItem="rCu-DJ-2th" firstAttribute="centerY" secondItem="huE-dx-g8K" secondAttribute="centerY" id="QGn-5B-7BK"/>
+                            <constraint firstItem="rCu-DJ-2th" firstAttribute="height" secondItem="huE-dx-g8K" secondAttribute="height" id="njV-bm-zLz"/>
+                            <constraint firstItem="rCu-DJ-2th" firstAttribute="width" secondItem="huE-dx-g8K" secondAttribute="width" id="xJH-pw-bbn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xyT-ZM-Xjn">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Training" id="Mqb-4R-SWm">
+                            <connections>
+                                <action selector="deleteTraining:" destination="Hu3-Cf-R7b" id="82u-JK-YAK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="EndTimeLabel" destination="ydI-dv-ejP" id="1ir-1C-UJ6"/>
+                        <outlet property="LocationLabel" destination="OHS-sr-x6j" id="1yE-Op-zyi"/>
+                        <outlet property="StartTimeLabel" destination="rhX-4g-Gbg" id="YrW-c6-HWc"/>
+                        <outlet property="additionalLabe" destination="60d-Rp-pt4" id="Mo8-s3-BPT"/>
+                        <outlet property="commentLabel" destination="dFZ-l4-hd2" id="hSo-Pf-Bl2"/>
+                        <outlet property="conditionLabel" destination="0p1-nw-TgF" id="Nhr-ha-axR"/>
+                        <outlet property="dayLabel" destination="TlC-Su-28V" id="uLd-5f-Ste"/>
+                        <outlet property="imageLocation" destination="xUa-fd-pe9" id="ENN-JH-coC"/>
+                        <outlet property="imageRating" destination="LCI-DA-hA4" id="gjP-qY-Smz"/>
+                        <outlet property="mouthLabel" destination="T72-80-9dM" id="2wc-8z-9dy"/>
+                        <outlet property="scrollView" destination="rCu-DJ-2th" id="TxD-2G-YLL"/>
+                        <outlet property="weaveSizeLabel" destination="h3v-AD-UFy" id="oNI-Ve-4Rb"/>
+                        <outlet property="yearLabel" destination="YNx-ye-txW" id="qlT-rA-egf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEu-PA-JA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m1j-dJ-Nuz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="1769"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQP-2f-4K9">
+            <objects>
+                <navigationController id="1ef-2r-5uc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="arb-Ig-ZfH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="he5-1t-3ah" kind="relationship" relationship="rootViewController" id="2JG-cc-InY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKV-a5-FY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="1002"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="800" height="800"/>
+        <image name="fon" width="4500" height="8000"/>
+        <image name="photoalbum" width="84" height="84"/>
+        <image name="rating" width="800" height="800"/>
+    </resources>
+</document>
